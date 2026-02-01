@@ -1,0 +1,513 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Karen & Marvin — Wedding</title>
+  <meta name="description" content="Karen & Marvin Wedding — December 22, 2026 — Mumbai, India" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;600&display=swap"
+    rel="stylesheet">
+
+  <style>
+    :root {
+      /* Theme */
+      --paper: #fbf6f4;
+      --paper-2: #f6efed;
+      --rose: #d8aa9e;
+      /* rose gold */
+      --rose-2: #c4978a;
+      --emerald: #2f6f61;
+      --emerald-2: #5e9c8f;
+      /* light emerald */
+
+      /* Readability */
+      --ink: #2a1f1f;
+      --muted: #4b3f3e;
+      --border: #e7c9c3;
+      --shadow: 0 18px 50px rgba(40, 25, 25, .12);
+      --radius: 22px;
+
+      --maxw: 980px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      line-height: 1.65;
+      background:
+        radial-gradient(900px 600px at 10% 10%, rgba(216, 170, 158, .14), transparent 62%),
+        radial-gradient(900px 600px at 90% 12%, transparent, transparent 58%),
+        radial-gradient(700px 520px at 50% 90%, rgba(216, 170, 158, .10), transparent 58%),
+        linear-gradient(180deg, var(--paper), var(--paper-2));
+    }
+
+    /* subtle paper texture */
+    body:before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image: radial-gradient(rgba(42, 31, 31, .05) 1px, transparent 1px);
+      background-size: 18px 18px;
+      opacity: .14;
+      mix-blend-mode: multiply;
+    }
+
+    .wrap {
+      min-height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 34px 16px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .card {
+      width: min(var(--maxw), 100%);
+      background: rgba(255, 255, 255, .72);
+      border: 1px solid rgba(231, 201, 195, .85);
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+      backdrop-filter: blur(7px);
+      transform-origin: center;
+      animation: cardIn 900ms cubic-bezier(.2, .8, .2, 1) both;
+    }
+
+    .card:before {
+      content: "";
+      position: absolute;
+      inset: 18px;
+      border: 1px solid rgba(231, 201, 195, .92);
+      border-radius: 6px;
+      pointer-events: none;
+    }
+
+    /* soft corner glows (emerald + rose) */
+    .card:after {
+      content: "";
+      position: absolute;
+      inset: -140px;
+      background:
+        radial-gradient(420px 360px at 16% 20%, transparent, transparent 60%),
+        radial-gradient(420px 360px at 84% 18%, rgba(216, 170, 158, .20), transparent 62%),
+        radial-gradient(500px 420px at 50% 112%, transparent, transparent 60%);
+      pointer-events: none;
+      opacity: .9;
+      filter: blur(2px);
+    }
+
+    header {
+      text-align: center;
+      padding: 64px 22px 36px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .kicker {
+      font-family: "Great Vibes", cursive;
+      font-size: clamp(44px, 6vw, 72px);
+      line-height: .95;
+      margin: 0 0 12px;
+      color: var(--rose-2);
+      letter-spacing: .5px;
+      animation: floaty 4.6s ease-in-out infinite;
+    }
+
+    header h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(38px, 4.6vw, 62px);
+      margin: 0;
+      color: var(--ink);
+      letter-spacing: .6px;
+      text-shadow: 0 1px 0 rgba(255, 255, 255, .55);
+    }
+
+    header p {
+      margin: 8px 0;
+      font-size: 18px;
+      color: var(--muted);
+    }
+
+    .date-line {
+      display: inline-flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      color: var(--rose-2);
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+    }
+
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: rgba(216, 170, 158, .75);
+      box-shadow: 0 0 0 3px transparent;
+    }
+
+    section {
+      max-width: 820px;
+      margin: 26px auto;
+      padding: 0 20px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      animation: fadeUp 900ms cubic-bezier(.2, .8, .2, 1) both;
+    }
+
+    /* stagger animations */
+    section:nth-of-type(1) {
+      animation-delay: 120ms;
+    }
+
+    section:nth-of-type(2) {
+      animation-delay: 220ms;
+    }
+
+    section:nth-of-type(3) {
+      animation-delay: 320ms;
+    }
+
+    h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 28px;
+      margin: 0 0 12px;
+      color: var(--ink);
+      letter-spacing: .3px;
+    }
+
+    .lead {
+      font-size: 16px;
+      color: var(--muted);
+      max-width: 64ch;
+      margin: 0 auto;
+    }
+
+    .details {
+      padding-top: 6px;
+    }
+
+    .details-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .pill {
+      text-align: left;
+      border: 1px solid rgba(231, 201, 195, .92);
+      background: rgba(255, 255, 255, .70);
+      border-radius: 16px;
+      padding: 14px 14px;
+      box-shadow: 0 10px 22px rgba(40, 25, 25, .06);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pill:before {
+      content: "";
+      position: absolute;
+      inset: -60px;
+      background:
+        radial-gradient(220px 200px at 20% 30%, transparent, transparent 60%),
+        radial-gradient(220px 200px at 90% 20%, rgba(216, 170, 158, .12), transparent 62%);
+      pointer-events: none;
+    }
+
+    .pill strong {
+      display: block;
+      color: var(--ink);
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .pill span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .rsvp {
+      margin-top: 34px;
+      border: 1px solid rgba(231, 201, 195, .92);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, .72);
+      padding: 34px 22px;
+      max-width: 860px;
+      box-shadow: 0 14px 34px rgba(40, 25, 25, .08);
+    }
+
+    .rsvp p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 18px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-weight: 700;
+      letter-spacing: .2px;
+      color: #1f1a1a;
+      text-decoration: none;
+      border: 1px solid rgba(183, 123, 111, .45);
+      background: linear-gradient(135deg, transparent, rgba(216, 170, 158, .22));
+      box-shadow: 0 14px 28px rgba(40, 25, 25, .10);
+      transition: transform .14s ease, box-shadow .14s ease, filter .14s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn:before {
+      content: "";
+      position: absolute;
+      inset: -2px;
+      background: linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, .55) 45%, transparent 70%);
+      transform: translateX(-120%);
+      transition: transform 700ms ease;
+      opacity: .55;
+      pointer-events: none;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 36px rgba(40, 25, 25, .14);
+    }
+
+    .btn:hover:before {
+      transform: translateX(120%);
+    }
+
+    .btn:active {
+      transform: translateY(0px);
+    }
+
+    .btn svg {
+      width: 18px;
+      height: 18px;
+      opacity: .9;
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px 20px 44px;
+      color: rgba(75, 63, 62, .88);
+      font-size: 14px;
+      font-family: "Playfair Display", serif;
+      position: relative;
+      z-index: 1;
+    }
+
+    footer small {
+      display: block;
+      margin-top: 6px;
+      color: rgba(75, 63, 62, .76);
+    }
+
+    /* animations */
+    @keyframes cardIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px) scale(.992);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(14px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes floaty {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-6px);
+      }
+    }
+
+    @keyframes cardZoom {
+      from {
+        opacity: 0;
+        transform: translateY(10px) scale(.96);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    50% {
+      transform: translateY(-6px);
+    }
+    }
+
+    /* responsive */
+    @media (max-width: 860px) {
+      .card:before {
+        inset: 14px;
+      }
+
+      header {
+        padding: 56px 18px 30px;
+      }
+
+      header p {
+        font-size: 16px;
+      }
+
+      .details-grid {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        margin: 22px auto;
+      }
+    }
+
+    /* reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="card" role="document" aria-label="Wedding website for Marvin and Karen">
+
+      <header>
+        <div class="kicker">Karen &amp; Marvin</div>
+        <p>Are Getting Married</p>
+        <p class="date-line">
+          <span>December 22, 2026</span>
+          <span class="dot" aria-hidden="true"></span>
+          <span>Mumbai, India</span>
+        </p>
+        <section style="padding-bottom:22px;">
+        <p class="lead">
+          We met, we laughed, we fell in love — and now we can’t wait to celebrate
+          this next chapter with our favorite people.
+        </p>
+      </section>
+      </header>
+
+
+
+      <!-- Save the Date Click Card Trigger -->
+      <section style="margin-top:20px; text-align:center; animation: fadeUp 1s both;">
+        <div id="envelopeOpenTrigger"
+          style="display:inline-block; cursor:pointer; padding:22px; border:1px solid rgba(196,151,138,.55); border-radius:12px; background:rgba(255,255,255,.65); box-shadow:0 12px 28px rgba(40,25,25,.10); transition:transform .25s ease, box-shadow .25s ease;">
+          <img src="envelope.png" alt="Open Save the Date"
+            style="width:120px; max-width:36vw; filter:drop-shadow(0 6px 10px rgba(0,0,0,.12)); transition:transform .25s ease;" />
+        </div>
+        <div style="margin-top:10px; font-size:12px; color:rgba(75,63,62,.55);">Tap to open</div>
+      </section>
+
+      <section class="rsvp" id="rsvp">
+        <h2>RSVP</h2>
+        <p>Please let us know if you’ll be able to join us.</p>
+        <a class="btn" href="https://forms.gle/jcY1bkCeTV5tt1nh8" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7Z" stroke="currentColor"
+              stroke-width="2" />
+            <path d="M12 12.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z" stroke="currentColor" stroke-width="2" />
+          </svg>
+          RSVP Here
+        </a>
+      </section>
+
+      <footer>
+        With love, Karen &amp; Marvin
+        <small>December 22, 2026 • Mumbai, India</small>
+      </footer>
+
+    </div>
+  </div>
+  <!-- Save the Date Modal -->
+  <div id="stdModal"
+    style="position:fixed; inset:0; background:rgba(0,0,0,.55); display:none; align-items:center; justify-content:center; z-index:999; backdrop-filter:blur(3px); animation: fadeUp 0.4s ease both;">
+    <div
+      style="background:white; padding:0; border-radius:8px; width:min(760px, 92vw); max-height:90vh; overflow:hidden; box-shadow:0 20px 40px rgba(0,0,0,.25); animation: cardZoom 0.55s cubic-bezier(.2,.8,.2,1) both;">
+      <div
+        style="display:flex; align-items:center; justify-content:center; padding:14px; background:rgba(255,255,255,.85);">
+        <img src="save_the_date_preview.jpg" alt="Save the Date"
+          style="display:block; max-width:100%; max-height:72vh; width:auto; height:auto; object-fit:contain; border-radius:6px; border:1px solid rgba(231,201,195,.8);" />
+      </div>
+      <button id="closeCardBtn"
+        style="width:100%; padding:14px; border:0; background:var(--rose-2); color:white; font-weight:600; cursor:pointer; font-size:15px; letter-spacing:.5px;">Close</button>
+    </div>
+  </div>
+
+  <script>
+    const modal = document.getElementById('stdModal');
+    const openBtn = document.getElementById('envelopeOpenTrigger');
+    const closeBtn = document.getElementById('closeCardBtn');
+
+    if (openBtn) {
+      document.getElementById('envelopeOpenTrigger').addEventListener('mouseenter', () => {
+        const shine = openBtn.querySelector('span:nth-child(2)');
+        if (shine) shine.style.transform = 'translateX(140%)';
+      });
+      openBtn.addEventListener('click', () => {
+        modal.style.display = 'flex';
+      });
+    }
+
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => {
+        modal.style.display = 'none';
+      });
+    }
+
+    // close by clicking background
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) { modal.style.display = 'none'; }
+    });
+  </script>
+
+</body>
+
+</html>
