@@ -1,449 +1,708 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Marvin & Karen — Wedding</title>
-  <meta name="description" content="Marvin & Karen are getting married. Celebration details, schedule, travel, and RSVP." />
+  <meta name="description"
+    content="Marvin & Karen are getting married. Celebration details, schedule, travel, and RSVP." />
   <meta name="theme-color" content="#F8F3E7" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
 
   <style>
-    :root{
-      --emerald:#0F5132;
-      --terracotta:#C45A36;
-      --peach:#F4B39B;
-      --ivory:#F8F3E7;
-      --rose-gold:#B76E79;
+    :root {
+      --emerald: #0F5132;
+      --terracotta: #C45A36;
+      --peach: #F4B39B;
+      --ivory: #F8F3E7;
+      --rose-gold: #B76E79;
 
-      --ink:#231a19;
-      --muted:#4b3f3e;
+      --ink: #231a19;
+      --muted: #4b3f3e;
 
-      --border: rgba(244,179,155,.55);
-      --shadow: 0 22px 70px rgba(183,110,121,.18);
-      --shadow-2: 0 18px 55px rgba(244,179,155,.22);
+      --border: rgba(244, 179, 155, .55);
+      --shadow: 0 22px 70px rgba(183, 110, 121, .18);
+      --shadow-2: 0 18px 55px rgba(244, 179, 155, .22);
 
       --maxw: 1080px;
     }
 
-    *{ box-sizing:border-box; }
-    html,body{ height:100%; }
-    html{ scroll-behavior:smooth; }
+    * {
+      box-sizing: border-box;
+    }
 
-    body{
-      margin:0;
-      color:var(--emerald);
-      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      line-height:1.65;
+    html,
+    body {
+      height: 100%;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--emerald);
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      line-height: 1.65;
+
+      /* ✅ IVORY BASE + PEACH/TERRACOTTA FLORAL BLOOMS */
       background:
-        radial-gradient(560px 460px at 20% 10%, rgba(244,179,155,.42), transparent 92%),
-        radial-gradient(560px 460px at 80% 12%, rgba(196,90,54,.34), transparent 90%),
-        radial-gradient(900px 680px at 50% 115%, rgba(183,110,121,.22), transparent 70%),
-        radial-gradient(720px 520px at 50% -10%, rgba(15,81,50,.10), transparent 62%),
-        var(--terracotta);
+        radial-gradient(560px 460px at 20% 10%, rgba(244, 179, 155, .42), transparent 70%),
+        radial-gradient(560px 460px at 80% 12%, rgba(196, 90, 54, .34), transparent 72%),
+        radial-gradient(900px 680px at 50% 115%, rgba(183, 110, 121, .18), transparent 70%),
+        radial-gradient(720px 520px at 50% -10%, rgba(15, 81, 50, .10), transparent 62%),
+        var(--ivory);
     }
 
-    body:before{
-      content:"";
-      position:fixed;
-      inset:0;
-      pointer-events:none;
+    body:before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
       background-image:
-        radial-gradient(rgba(244,179,155,.15) 1px, transparent 1px),
-        radial-gradient(rgba(196,90,54,.11) 1px, transparent 1px);
-      background-size:22px 22px, 30px 30px;
-      opacity:.22;
-      mix-blend-mode:multiply;
+        radial-gradient(rgba(244, 179, 155, .15) 1px, transparent 1px),
+        radial-gradient(rgba(196, 90, 54, .11) 1px, transparent 1px);
+      background-size: 22px 22px, 30px 30px;
+      opacity: .22;
+      mix-blend-mode: multiply;
     }
 
-    .wrap{ position:relative; z-index:1; padding:20px 14px 54px; display:flex; justify-content:center; }
-    .shell{ width:min(var(--maxw),100%); }
+    .wrap {
+      position: relative;
+      z-index: 1;
+      padding: 20px 14px 54px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .shell {
+      width: min(var(--maxw), 100%);
+    }
 
     /* NAV */
-    .topbar{
-      position:sticky; top:10px; z-index:20;
-      margin:10px auto 14px;
-      background: var(--peach);
-      border: 1px solid rgba(244,179,155,.45);
+    .topbar {
+      position: sticky;
+      top: 10px;
+      z-index: 20;
+      margin: 10px auto 14px;
+      background: rgba(244, 179, 155, .82);
+      border: 1px solid rgba(244, 179, 155, .45);
       backdrop-filter: blur(10px);
       border-radius: 999px;
       box-shadow: var(--shadow-2);
-      padding:10px 12px;
-      display:flex;
-      align-items:center;
-      gap:10px;
-      overflow-x:auto;
-      scrollbar-width:none;
+      padding: 10px 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      overflow-x: auto;
+      scrollbar-width: none;
     }
-    .topbar::-webkit-scrollbar{ display:none; }
 
-    .brand{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding:6px 10px;
-      white-space:nowrap;
+    .topbar::-webkit-scrollbar {
+      display: none;
     }
-    .brand .names{ font-weight:900; letter-spacing:.2px; }
 
-    .navlinks{
-      display:flex;
-      gap:6px;
-      align-items:center;
-      flex:1;
-      justify-content:flex-end;
-      min-width:540px;
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 6px 10px;
+      white-space: nowrap;
     }
-    .navlinks a{
-      text-decoration:none;
-      color:var(--emerald);
-      font-weight:800;
-      font-size:14px;
-      padding:9px 12px;
-      border-radius:999px;
-      border:1px solid transparent;
-      white-space:nowrap;
+
+    .brand .names {
+      font-weight: 900;
+      letter-spacing: .2px;
+    }
+
+    .navlinks {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+      flex: 1;
+      justify-content: flex-end;
+      min-width: 540px;
+    }
+
+    .navlinks a {
+      text-decoration: none;
+      color: var(--emerald);
+      font-weight: 800;
+      font-size: 14px;
+      padding: 9px 12px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      white-space: nowrap;
       transition: transform .12s ease, background .12s ease, border-color .12s ease;
     }
-    .navlinks a:hover{
+
+    .navlinks a:hover {
       background: var(--ivory);
-      border-color: rgba(244,179,155,.55);
+      border-color: rgba(244, 179, 155, .55);
       transform: translateY(-1px);
     }
 
-    .btn, .navcta{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding:12px 18px;
-      border-radius:999px;
-      font-weight:900;
-      color:var(--terracotta);
-      border:1px solid var(--terracotta);
-      background:var(--ivory);
-      box-shadow: 0 16px 34px rgba(183,110,121,.16);
-      cursor:pointer;
-      text-decoration:none;
+    .btn,
+    .navcta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-weight: 900;
+      color: var(--terracotta);
+      border: 1px solid var(--terracotta);
+      background: var(--ivory);
+      box-shadow: 0 16px 34px rgba(183, 110, 121, .16);
+      cursor: pointer;
+      text-decoration: none;
       transition: transform .12s ease, box-shadow .12s ease, filter .12s ease;
-      white-space:nowrap;
+      white-space: nowrap;
     }
-    .btn:hover, .navcta:hover{
+
+    .btn:hover,
+    .navcta:hover {
       transform: translateY(-1px);
       filter: saturate(1.06);
-      box-shadow: 0 22px 44px rgba(183,110,121,.18);
-      color:var(--ink);
+      box-shadow: 0 22px 44px rgba(183, 110, 121, .18);
+      color: var(--ink);
     }
-    .btn.secondary{
-      background: rgba(248,243,231,.70);
-      border-color:  var(--terracotta);
-      box-shadow: 0 14px 28px rgba(244,179,155,.14);
-    }
-    .btn svg, .navcta svg{ width:18px; height:18px; color:var(--emerald); }
 
-    .card{
-      position:relative;
-      background: rgba(255,255,255,.74);
+    .btn.secondary {
+      background: rgba(248, 243, 231, .70);
+      border-color: var(--terracotta);
+      box-shadow: 0 14px 28px rgba(244, 179, 155, .14);
+    }
+
+    .btn svg,
+    .navcta svg {
+      width: 18px;
+      height: 18px;
+      color: var(--emerald);
+    }
+
+    .card {
+      position: relative;
+      background: rgba(255, 255, 255, .74);
       border: 1px solid var(--border);
       border-radius: 12px;
       box-shadow: var(--shadow);
       backdrop-filter: blur(8px);
-      overflow:hidden;
-      animation: cardIn 900ms cubic-bezier(.2,.8,.2,1) both;
-    }
-    .card:before{
-      content:"";
-      position:absolute;
-      inset:16px;
-      border:1px solid rgba(244,179,155,.65);
-      border-radius:10px;
-      pointer-events:none;
+      overflow: hidden;
+      animation: cardIn 900ms cubic-bezier(.2, .8, .2, 1) both;
     }
 
-    .hero{
-      text-align:center;
-      padding:82px 22px 24px;
-      position:relative;
+    .card:before {
+      content: "";
+      position: absolute;
+      inset: 16px;
+      border: 1px solid rgba(244, 179, 155, .65);
+      border-radius: 10px;
+      pointer-events: none;
     }
-    .hero:after{
-      content:"";
-      position:absolute;
-      width:760px;
-      height:760px;
-      left:50%;
-      top:-340px;
+
+    .hero {
+      text-align: center;
+      padding: 82px 22px 24px;
+      position: relative;
+    }
+
+    .hero:after {
+      content: "";
+      position: absolute;
+      width: 760px;
+      height: 760px;
+      left: 50%;
+      top: -340px;
       transform: translateX(-50%);
-      background: radial-gradient(circle, rgba(244,179,155,.26), transparent 62%);
+      background: radial-gradient(circle, rgba(244, 179, 155, .26), transparent 62%);
       filter: blur(2px);
-      pointer-events:none;
+      pointer-events: none;
     }
 
-    .hero h1{
-      font-family:"Playfair Display", serif;
+    .hero h1 {
+      font-family: "Playfair Display", serif;
       font-size: clamp(42px, 4.9vw, 70px);
-      margin:0;
-      position:relative;
-      z-index:1;
+      margin: 0;
+      position: relative;
+      z-index: 1;
     }
 
-    .date-line{
-      margin-top:10px;
-      display:inline-flex;
-      flex-wrap:wrap;
-      justify-content:center;
-      gap:10px;
-      font-weight:800;
-      color:var(--emerald);
-      opacity:.98;
-      position:relative;
-      z-index:1;
+    .date-line {
+      margin-top: 10px;
+      display: inline-flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      font-weight: 800;
+      color: var(--emerald);
+      opacity: .98;
+      position: relative;
+      z-index: 1;
     }
-    .dot{ width:6px;height:6px;border-radius:999px;background:var(--terracotta); margin-top:10px; }
-    .subcopy{
-      max-width:62ch;
-      margin:16px auto 0;
-      color:var(--muted);
-      font-weight:600;
-      position:relative;
-      z-index:1;
+
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--terracotta);
+      margin-top: 10px;
     }
-    .hero-actions{
-      margin-top:18px;
-      display:flex;
-      justify-content:center;
-      gap:12px;
-      flex-wrap:wrap;
-      position:relative;
-      z-index:1;
+
+    .subcopy {
+      max-width: 62ch;
+      margin: 16px auto 0;
+      color: var(--muted);
+      font-weight: 600;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-actions {
+      margin-top: 18px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 1;
     }
 
     /* Sections */
-    .section{ padding: 20px 22px 40px; }
-    .grid{
-      display:grid;
+    .section {
+      padding: 20px 22px 40px;
+    }
+
+    .grid {
+      display: grid;
       grid-template-columns: 1.1fr .9fr;
-      gap:18px;
+      gap: 18px;
       padding: 0 18px 26px;
     }
-    .panel{
-      border-radius:18px;
-      border:1px solid rgba(244,179,155,.50);
-      background: rgba(255,255,255,.70);
-      padding:18px;
-      box-shadow: 0 16px 36px rgba(244,179,155,.14);
+
+    .panel {
+      border-radius: 18px;
+      border: 1px solid rgba(244, 179, 155, .50);
+      background: rgba(255, 255, 255, .70);
+      padding: 18px;
+      box-shadow: 0 16px 36px rgba(244, 179, 155, .14);
     }
-    .panel h2{
-      margin:0 0 10px;
-      font-family:"Playfair Display", serif;
-      font-size:26px;
+
+    .panel h2 {
+      margin: 0 0 10px;
+      font-family: "Playfair Display", serif;
+      font-size: 26px;
     }
-    .panel p{ margin:0; color:var(--muted); font-weight:600; }
-    .divider{
-      height:1px;
-      background: linear-gradient(90deg, transparent, rgba(244,179,155,.75), transparent);
+
+    .panel p {
+      margin: 0;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(244, 179, 155, .75), transparent);
       margin: 12px 0;
     }
 
-    .timeline{ margin:10px 0 0; padding:0; list-style:none; display:grid; gap:12px; }
-    .event{
-      display:grid;
-      grid-template-columns:110px 1fr;
-      gap:14px;
-      align-items:start;
-      padding:14px;
-      border-radius:16px;
-      border:1px solid rgba(244,179,155,.45);
-      background: radial-gradient(circle at 20% 20%, rgba(244,179,155,.18), rgba(248,243,231,.58));
+    .timeline {
+      margin: 10px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 12px;
     }
-    .time{ font-weight:950; color:var(--emerald); }
-    .event b{ display:block; }
-    .event small{ color:var(--muted); font-weight:700; }
 
-    details{
-      border-radius:16px;
-      border:1px solid rgba(244,179,155,.46);
-      background: rgba(255,255,255,.70);
-      padding:12px 14px;
-      box-shadow: 0 12px 26px rgba(244,179,155,.12);
+    .event {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 14px;
+      align-items: start;
+      padding: 14px;
+      border-radius: 16px;
+      border: 1px solid rgba(244, 179, 155, .45);
+      background: radial-gradient(circle at 20% 20%, rgba(244, 179, 155, .18), rgba(248, 243, 231, .58));
     }
-    details + details{ margin-top:10px; }
-    summary{
-      cursor:pointer;
-      font-weight:950;
-      list-style:none;
-      position:relative;
-      padding-right:28px;
-    }
-    summary::-webkit-details-marker{ display:none; }
-    summary:after{
-      content:"＋";
-      position:absolute;
-      right:0; top:0;
-      color:var(--terracotta);
-      font-weight:950;
-    }
-    details[open] summary:after{ content:"—"; }
-    details small{ display:block; margin-top:10px; color:var(--muted); font-weight:600; }
 
-    footer{
-      text-align:center;
-      padding: 20px 14px 6px;
-      color: rgba(75,63,62,.88);
-      font-weight:700;
+    .time {
+      font-weight: 950;
+      color: var(--emerald);
     }
-    footer .sig{
-      font-family:"Great Vibes", cursive;
-      font-size:34px;
+
+    .event b {
+      display: block;
+    }
+
+    .event small {
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    details {
+      border-radius: 16px;
+      border: 1px solid rgba(244, 179, 155, .46);
+      background: rgba(255, 255, 255, .70);
+      padding: 12px 14px;
+      box-shadow: 0 12px 26px rgba(244, 179, 155, .12);
+    }
+
+    details+details {
+      margin-top: 10px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 950;
+      list-style: none;
+      position: relative;
+      padding-right: 28px;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary:after {
+      content: "＋";
+      position: absolute;
+      right: 0;
+      top: 0;
       color: var(--terracotta);
-      margin-top:4px;
-      text-shadow: 0 14px 40px rgba(183,110,121,.18);
+      font-weight: 950;
+    }
+
+    details[open] summary:after {
+      content: "—";
+    }
+
+    details small {
+      display: block;
+      margin-top: 10px;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px 14px 6px;
+      color: rgba(75, 63, 62, .88);
+      font-weight: 700;
+    }
+
+    footer .sig {
+      font-family: "Great Vibes", cursive;
+      font-size: 34px;
+      color: var(--terracotta);
+      margin-top: 4px;
+      text-shadow: 0 14px 40px rgba(183, 110, 121, .18);
     }
 
     /* ========= Gold Foil Text ========= */
-    .gold-foil{
+    .gold-foil {
       background: linear-gradient(120deg,
-        #C89A9C 38%,
-        #D6C29E 42%,
-        #b88a2c 58%,
-        #C45A36 74%,
-        #8c6a1f 100%);
+          #D6C29E 42%,
+          #b88a2c 58%,
+          #C45A36 74%,
+          #8c6a1f 100%);
       background-size: 220% 220%;
-      -webkit-background-clip:text;
-      background-clip:text;
-      color:transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
       text-shadow:
-        0 1px 0 rgba(255,255,255,.22),
-        0 14px 30px rgba(183,110,121,.10);
-      position:relative;
+        0 1px 0 rgba(255, 255, 255, .22),
+        0 14px 30px rgba(183, 110, 121, .10);
+      position: relative;
       animation: foilShimmer 6.5s ease-in-out infinite;
     }
-    .gold-foil::after{
-      content:"";
-      position:absolute;
-      inset:-6px;
+
+    .gold-foil::after {
+      content: "";
+      position: absolute;
+      inset: -6px;
       background:
-        radial-gradient(rgba(255,255,255,.10) 1px, transparent 1px),
-        radial-gradient(rgba(0,0,0,.06) 1px, transparent 1px);
+        radial-gradient(rgba(255, 255, 255, .10) 1px, transparent 1px),
+        radial-gradient(rgba(0, 0, 0, .06) 1px, transparent 1px);
       background-size: 18px 18px, 26px 26px;
       mix-blend-mode: overlay;
-      opacity:.22;
-      pointer-events:none;
-      -webkit-mask-image: linear-gradient(#000,#000);
-      mask-image: linear-gradient(#000,#000);
+      opacity: .22;
+      pointer-events: none;
+      -webkit-mask-image: linear-gradient(#000, #000);
+      mask-image: linear-gradient(#000, #000);
     }
-    @keyframes foilShimmer{
-      0%,100%{ background-position: 0% 50%; }
-      50%{ background-position: 100% 50%; }
+
+    @keyframes foilShimmer {
+
+      0%,
+      100% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
     }
 
     /* ========= Countdown ========= */
-    .countdown-section{ padding: 0 22px 40px; display:flex; justify-content:center; }
-    .countdown-card{
-      max-width:560px;
-      width:100%;
-      text-align:center;
-      background: rgba(255,255,255,.76);
-      border:1px solid rgba(244,179,155,.55);
-      border-radius:24px;
+    .countdown-section {
+      padding: 20px 22px 40px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .countdown-card {
+      max-width: 560px;
+      width: 100%;
+      text-align: center;
+      background: rgba(255, 255, 255, .76);
+      border: 1px solid rgba(244, 179, 155, .55);
+      border-radius: 24px;
       backdrop-filter: blur(10px);
       padding: 32px 26px;
-      box-shadow: 0 22px 70px rgba(183,110,121,.16);
-      position:relative;
-      overflow:hidden;
+      box-shadow: 0 22px 70px rgba(183, 110, 121, .16);
+      position: relative;
+      overflow: hidden;
     }
-    .countdown-card::before{
-      content:"";
-      position:absolute;
-      inset:14px;
-      border-radius:18px;
-      border:1px solid rgba(244,179,155,.52);
-      pointer-events:none;
+
+    .countdown-card::before {
+      content: "";
+      position: absolute;
+      inset: 14px;
+      border-radius: 18px;
+      border: 1px solid rgba(244, 179, 155, .52);
+      pointer-events: none;
     }
-    .countdown-glow{
-      position:absolute;
-      width:700px;
-      height:520px;
-      top:-360px;
-      left:50%;
+
+    .countdown-glow {
+      position: absolute;
+      width: 700px;
+      height: 520px;
+      top: -360px;
+      left: 50%;
       transform: translateX(-50%);
-      background: radial-gradient(circle, rgba(244,179,155,.25), transparent 70%);
-      pointer-events:none;
+      background: radial-gradient(circle, rgba(244, 179, 155, .25), transparent 70%);
+      pointer-events: none;
       filter: blur(1px);
     }
-    .countdown-kicker{
-      font-family:"Playfair Display", serif;
-      font-size:14px;
-      letter-spacing:.28em;
-      text-transform:uppercase;
-      margin:0;
-      color: rgba(75,63,62,.86);
-      font-weight:700;
+
+    .countdown-kicker {
+      font-family: "Playfair Display", serif;
+      font-size: 14px;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      margin: 0;
+      color: rgba(75, 63, 62, .86);
+      font-weight: 700;
     }
-    .countdown-title{
-      font-family:"Great Vibes", cursive;
+
+    .countdown-title {
+      font-family: "Great Vibes", cursive;
       font-size: 44px;
       margin: 10px 0 18px;
       line-height: 1.15;
     }
-    .countdown-grid{
-      display:grid;
+
+    .countdown-grid {
+      display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap:12px;
+      gap: 12px;
       margin-top: 6px;
     }
-    .countdown-pill{
-      border-radius:18px;
-      border:1px solid rgba(244,179,155,.48);
-      background: radial-gradient(circle at 20% 20%, rgba(244,179,155,.16), rgba(248,243,231,.50));
-      padding:14px 10px 12px;
-      box-shadow: 0 12px 28px rgba(244,179,155,.12);
+
+    .countdown-pill {
+      border-radius: 18px;
+      border: 1px solid rgba(244, 179, 155, .48);
+      background: radial-gradient(circle at 20% 20%, rgba(244, 179, 155, .16), rgba(248, 243, 231, .50));
+      padding: 14px 10px 12px;
+      box-shadow: 0 12px 28px rgba(244, 179, 155, .12);
     }
-    .countdown-label{
-      font-size:12px;
-      letter-spacing:.22em;
-      text-transform:uppercase;
-      color: rgba(75,63,62,.85);
-      font-weight:800;
-      margin-top:6px;
+
+    .countdown-label {
+      font-size: 12px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: rgba(75, 63, 62, .85);
+      font-weight: 800;
+      margin-top: 6px;
     }
-    .flip-wrap{
-      position:relative;
-      height:56px;
+
+    .flip-wrap {
+      position: relative;
+      height: 56px;
       overflow: visible;
-      display:grid;
-      place-items:center;
+      display: grid;
+      place-items: center;
     }
-    .num{
-      font-family:"Playfair Display", serif;
-      font-size:36px;
-      font-weight:800;
-      line-height:1.1;
-      position:absolute;
-      inset:0;
-      display:grid;
-      place-items:center;
+
+    .num {
+      font-family: "Playfair Display", serif;
+      font-size: 36px;
+      font-weight: 800;
+      line-height: 1.1;
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
       color: var(--emerald);
-      letter-spacing:.02em;
+      letter-spacing: .02em;
       transition: opacity 420ms ease;
       padding-bottom: 2px;
     }
-    .num.fade-out{ opacity:0; }
-    .num.fade-in{ opacity:1; }
 
-    @media (max-width: 920px){
-      .grid{ grid-template-columns:1fr; }
-      .navlinks{ min-width:auto; }
+    .num.fade-out {
+      opacity: 0;
     }
 
-    @keyframes cardIn{
-      from{ transform: translateY(12px); opacity:0; }
-      to{ transform: translateY(0); opacity:1; }
+    .num.fade-in {
+      opacity: 1;
     }
-    @keyframes floaty{
-      0%,100%{ transform: translateY(0); }
-      50%{ transform: translateY(-6px); }
+
+    /* ========= Save the Date (ADDED) ========= */
+    .std-section {
+      padding: 0 22px 40px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .std-card {
+      width: 100%;
+      max-width: 980px;
+      border-radius: 24px;
+      border: 1px solid rgba(244, 179, 155, .55);
+      background: rgba(255, 255, 255, .78);
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow);
+      padding: 22px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .std-card::before {
+      content: "";
+      position: absolute;
+      inset: 14px;
+      border-radius: 18px;
+      border: 1px solid rgba(244, 179, 155, .52);
+      pointer-events: none;
+    }
+
+    .std-head {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      margin-bottom: 14px;
+    }
+
+    .std-head h2 {
+      margin: 0;
+      font-family: "Playfair Display", serif;
+      font-size: 26px;
+      color: var(--emerald);
+    }
+
+    .std-head p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-weight: 650;
+    }
+
+    .std-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 14px;
+      align-items: stretch;
+    }
+
+    .std-preview {
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(244, 179, 155, .60);
+      background: rgba(248, 243, 231, .60);
+      box-shadow: 0 16px 34px rgba(183, 110, 121, .12);
+      cursor: pointer;
+    }
+
+    .std-preview img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .std-actions {
+      border-radius: 18px;
+      border: 1px solid rgba(244, 179, 155, .50);
+      background: rgba(255, 255, 255, .72);
+      box-shadow: 0 16px 36px rgba(244, 179, 155, .14);
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .std-actions .hint {
+      font-size: 12px;
+      color: rgba(75, 63, 62, .70);
+      font-weight: 700;
+    }
+
+    @media (max-width: 920px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .navlinks {
+        min-width: auto;
+      }
+
+      .std-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @keyframes cardIn {
+      from {
+        transform: translateY(12px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes floaty {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-6px);
+      }
+    }
+
+    @keyframes cardZoom {
+      from {
+        opacity: 0;
+        transform: translateY(10px) scale(.96);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
     }
   </style>
 </head>
@@ -457,6 +716,7 @@
         </div>
 
         <div class="navlinks">
+          <a href="#save-the-date">Save the date</a>
           <a href="#details">Details</a>
           <a href="#schedule">Schedule</a>
           <a href="#travel">Travel</a>
@@ -465,8 +725,11 @@
 
           <button class="navcta js-rsvp" type="button" aria-label="RSVP">
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M4 7.5a2.5 2.5 0 0 1 2.5-2.5h11A2.5 2.5 0 0 1 20 7.5v9A2.5 2.5 0 0 1 17.5 19h-11A2.5 2.5 0 0 1 4 16.5v-9Z" stroke="currentColor" stroke-width="2" />
-              <path d="M6.5 7.5 12 12l5.5-4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path
+                d="M4 7.5a2.5 2.5 0 0 1 2.5-2.5h11A2.5 2.5 0 0 1 20 7.5v9A2.5 2.5 0 0 1 17.5 19h-11A2.5 2.5 0 0 1 4 16.5v-9Z"
+                stroke="currentColor" stroke-width="2" />
+              <path d="M6.5 7.5 12 12l5.5-4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
             </svg>
             RSVP
           </button>
@@ -480,45 +743,66 @@
             <span>22 December 2026</span>
             <span class="dot" aria-hidden="true"></span>
             <span>Mumbai, India</span>
+
           </div>
+          <!-- Countdown moved directly under the hero -->
+          <section class="countdown-section" id="countdown-section">
+            <div class="countdown-card">
+              <div class="countdown-glow"></div>
+
+              <p class="countdown-kicker">Counting down to</p>
+              <h2 class="countdown-title gold-foil">Our Wedding Day</h2>
+
+              <div class="countdown-grid" aria-label="Countdown">
+                <div class="countdown-pill">
+                  <div class="flip-wrap" id="daysWrap"><span class="num fade-in">—</span></div>
+                  <div class="countdown-label">Days</div>
+                </div>
+                <div class="countdown-pill">
+                  <div class="flip-wrap" id="hoursWrap"><span class="num fade-in">—</span></div>
+                  <div class="countdown-label">Hours</div>
+                </div>
+                <div class="countdown-pill">
+                  <div class="flip-wrap" id="minsWrap"><span class="num fade-in">—</span></div>
+                  <div class="countdown-label">Minutes</div>
+                </div>
+              </div>
+            </div>
+          </section>
+
 
           <p class="subcopy">
             With full hearts, we can’t wait to celebrate our wedding with our favourite people.
             Here you’ll find the schedule, travel notes, and RSVP.
           </p>
-
-          <div class="hero-actions">
-            <a class="btn" href="#schedule">View schedule</a>
-            <button class="btn secondary js-rsvp" type="button">
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M4 7.5a2.5 2.5 0 0 1 2.5-2.5h11A2.5 2.5 0 0 1 20 7.5v9A2.5 2.5 0 0 1 17.5 19h-11A2.5 2.5 0 0 1 4 16.5v-9Z" stroke="currentColor" stroke-width="2" />
-                <path d="M6.5 7.5 12 12l5.5-4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-              RSVP
-            </button>
-          </div>
         </header>
 
-        <!-- Countdown moved directly under the hero -->
-        <section class="countdown-section" id="countdown-section">
-          <div class="countdown-card">
-            <div class="countdown-glow"></div>
+        <!-- ✅ SAVE THE DATE + DOWNLOAD (ADDED) -->
+        <section class="std-section" id="save-the-date">
+          <div class="std-card">
+            <div class="std-head">
+              <h2>Save the Date</h2>
+            </div>
 
-            <p class="countdown-kicker">Counting down to</p>
-            <h2 class="countdown-title gold-foil">Our Wedding Day</h2>
+            <div class="std-grid">
+              <!-- Preview image: update filename to your actual image -->
+              <div class="std-preview" id="stdPreviewTrigger" aria-label="Open Save the Date preview">
+                <img src="save_the_date_preview.jpg" alt="Save the Date preview">
+              </div>
 
-            <div class="countdown-grid" aria-label="Countdown">
-              <div class="countdown-pill">
-                <div class="flip-wrap" id="daysWrap"><span class="num fade-in">—</span></div>
-                <div class="countdown-label">Days</div>
-              </div>
-              <div class="countdown-pill">
-                <div class="flip-wrap" id="hoursWrap"><span class="num fade-in">—</span></div>
-                <div class="countdown-label">Hours</div>
-              </div>
-              <div class="countdown-pill">
-                <div class="flip-wrap" id="minsWrap"><span class="num fade-in">—</span></div>
-                <div class="countdown-label">Minutes</div>
+              <!-- Download buttons: update filenames to your real files -->
+              <div class="std-actions">
+                <a class="btn" href="#schedule">View schedule</a>
+                <button class="btn secondary js-rsvp" type="button">
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path
+                      d="M4 7.5a2.5 2.5 0 0 1 2.5-2.5h11A2.5 2.5 0 0 1 20 7.5v9A2.5 2.5 0 0 1 17.5 19h-11A2.5 2.5 0 0 1 4 16.5v-9Z"
+                      stroke="currentColor" stroke-width="2" />
+                    <path d="M6.5 7.5 12 12l5.5-4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                  RSVP
+                </button>
               </div>
             </div>
           </div>
@@ -534,7 +818,8 @@
                 surrounded by the friends and family who have walked beside us through every season.
               </p>
               <div class="divider"></div>
-              <p>We’ll keep this page updated as details are confirmed. Check back for venues, timing, and travel tips.</p>
+              <p>We’ll keep this page updated as details are confirmed. Check back for venues, timing, and travel tips.
+              </p>
             </article>
 
             <aside class="panel">
@@ -619,8 +904,11 @@
                 <a class="btn secondary" href="#" onclick="alert('Add your UPI link here!'); return false;">UPI link</a>
                 <button class="btn js-rsvp" type="button">
                   <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                    <path d="M4 7.5a2.5 2.5 0 0 1 2.5-2.5h11A2.5 2.5 0 0 1 20 7.5v9A2.5 2.5 0 0 1 17.5 19h-11A2.5 2.5 0 0 1 4 16.5v-9Z" stroke="currentColor" stroke-width="2" />
-                    <path d="M6.5 7.5 12 12l5.5-4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path
+                      d="M4 7.5a2.5 2.5 0 0 1 2.5-2.5h11A2.5 2.5 0 0 1 20 7.5v9A2.5 2.5 0 0 1 17.5 19h-11A2.5 2.5 0 0 1 4 16.5v-9Z"
+                      stroke="currentColor" stroke-width="2" />
+                    <path d="M6.5 7.5 12 12l5.5-4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
                   </svg>
                   RSVP now
                 </button>
@@ -638,16 +926,33 @@
     </div>
   </div>
 
+  <!-- ✅ SAVE THE DATE MODAL (ADDED) -->
+  <div id="stdModal"
+    style="position:fixed; inset:0; background:rgba(0,0,0,.55); display:none; align-items:center; justify-content:center; z-index:999; backdrop-filter:blur(3px); animation: cardZoom .45s ease both;">
+    <div
+      style="background:white; padding:0; border-radius:12px; width:min(900px, 92vw); max-height:90vh; overflow:hidden; box-shadow:0 20px 40px rgba(0,0,0,.25);">
+      <div
+        style="display:flex; align-items:center; justify-content:center; padding:14px; background:rgba(255,255,255,.90);">
+        <img src="save_the_date_preview.jpg" alt="Save the Date full preview"
+          style="display:block; max-width:100%; max-height:72vh; width:auto; height:auto; object-fit:contain; border-radius:10px; border:1px solid rgba(244,179,155,.60);" />
+      </div>
+      <button id="closeCardBtn"
+        style="width:100%; padding:14px; border:0; background:var(--emerald); color:var(--ivory); font-weight:900; cursor:pointer; font-size:15px; letter-spacing:.5px;">
+        Close
+      </button>
+    </div>
+  </div>
+
   <script>
     // SETTINGS
     const RSVP_FORM_URL = "https://forms.gle/jcY1bkCeTV5tt1nh8";
-    const weddingDate   = new Date("2026-12-22T16:00:00+05:30"); // IST
-    const rsvpDeadline  = new Date("2026-10-15T23:59:59+05:30");
+    const weddingDate = new Date("2026-12-22T16:00:00+05:30"); // IST
+    const rsvpDeadline = new Date("2026-11-15T23:59:59+05:30");
 
     // Footer year + RSVP by
     document.getElementById("year").textContent = new Date().getFullYear();
     document.getElementById("rsvpBy").textContent =
-      rsvpDeadline.toLocaleDateString(undefined, { year:"numeric", month:"long", day:"numeric" });
+      rsvpDeadline.toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" });
 
     // RSVP buttons -> Google Form
     document.querySelectorAll(".js-rsvp").forEach((btn) => {
@@ -656,11 +961,11 @@
 
     // Elegant countdown (fade-only)
     const wraps = {
-      days:  document.getElementById("daysWrap"),
+      days: document.getElementById("daysWrap"),
       hours: document.getElementById("hoursWrap"),
-      mins:  document.getElementById("minsWrap"),
+      mins: document.getElementById("minsWrap"),
     };
-    const last = { days:null, hours:null, mins:null };
+    const last = { days: null, hours: null, mins: null };
 
     function crossfade(wrap, nextText) {
       const current = wrap.querySelector(".num");
@@ -686,16 +991,16 @@
       const diff = weddingDate - now;
 
       if (diff <= 0) {
-        ["days","hours","mins"].forEach(k => {
+        ["days", "hours", "mins"].forEach(k => {
           if (last[k] !== 0) crossfade(wraps[k], "00");
           last[k] = 0;
         });
         return;
       }
 
-      const days  = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
       const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-      const mins  = Math.floor((diff / (1000 * 60)) % 60);
+      const mins = Math.floor((diff / (1000 * 60)) % 60);
 
       const nextVals = { days, hours, mins };
 
@@ -713,6 +1018,19 @@
 
     updateCountdown();
     setInterval(updateCountdown, 15000);
+
+    // ✅ Save the Date Modal wiring
+    const stdModal = document.getElementById("stdModal");
+    const stdOpen = document.getElementById("stdPreviewTrigger");
+    const stdClose = document.getElementById("closeCardBtn");
+
+    if (stdOpen) stdOpen.addEventListener("click", () => { stdModal.style.display = "flex"; });
+    if (stdClose) stdClose.addEventListener("click", () => { stdModal.style.display = "none"; });
+
+    stdModal.addEventListener("click", (e) => {
+      if (e.target === stdModal) stdModal.style.display = "none";
+    });
   </script>
 </body>
+
 </html>
