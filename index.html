@@ -275,6 +275,34 @@
       z-index: 1;
     }
 
+    /* OPTIONAL: make the panel look cleaner + less “boxy” (drop into your CSS) */
+    #registry.panel {
+      padding: 18px 18px 16px;
+    }
+
+    #registry.panel h2 {
+      margin: 0 0 8px;
+    }
+
+    #registry .divider {
+      margin: 12px 0;
+    }
+
+    #registry .btn,
+    #registry .btn.secondary {
+      padding: 11px 16px;
+      /* slightly smaller buttons */
+      box-shadow: none;
+      /* cleaner */
+    }
+
+    #registry .btn:hover,
+    #registry .btn.secondary:hover {
+      box-shadow: 0 14px 28px rgba(244, 179, 155, .14);
+      /* subtle on hover only */
+    }
+
+
     /* Sections */
     .section {
       padding: 20px 22px 40px;
@@ -897,23 +925,29 @@
 
             <aside class="panel" id="registry">
               <h2>Gifts</h2>
-              <p>Your presence is the best gift. If you’d like to contribute, we’ll share UPI details here.</p>
+
+              <p style="margin:0; color:var(--muted); font-weight:650;">
+                Your presence is the best gift.
+              </p>
+
               <div class="divider"></div>
 
+              <p style="margin:0; color:var(--ink); font-weight:800;">
+                If you’d like to gift, <span style="color:var(--terracotta);">cash</span> or <span
+                  style="color:var(--terracotta);">UPI</span> is perfect.
+              </p>
+
               <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
-                <a class="btn secondary" href="#" onclick="alert('Add your UPI link here!'); return false;">UPI link</a>
-                <button class="btn js-rsvp" type="button">
-                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                    <path
-                      d="M4 7.5a2.5 2.5 0 0 1 2.5-2.5h11A2.5 2.5 0 0 1 20 7.5v9A2.5 2.5 0 0 1 17.5 19h-11A2.5 2.5 0 0 1 4 16.5v-9Z"
-                      stroke="currentColor" stroke-width="2" />
-                    <path d="M6.5 7.5 12 12l5.5-4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round" />
-                  </svg>
-                  RSVP now
-                </button>
+                <!-- Replace with your actual UPI action (QR modal / link) -->
+                <a class="btn secondary" href="#" onclick="alert('Add your UPI details / QR link here'); return false;">
+                  UPI details
+                </a>
+                <div style="margin-top:10px; font-size:12px; color:rgba(75,63,62,.72); font-weight:700;">
+                  P.S. No boxes, no wrapping, no guessing — just good vibes.
+                </div>
               </div>
             </aside>
+
           </div>
         </section>
 
