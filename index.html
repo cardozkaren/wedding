@@ -7,7 +7,8 @@
   <title>Karen & Marvin — Wedding</title>
   <meta name="description"
     content="Karen & Marvin are getting married. Celebration details, schedule, travel, and RSVP." />
-  <meta name="theme-color" content="#F8F3E7" />
+
+  <!-- keep it a surprise: no theme-color meta -->
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,18 +18,17 @@
 
   <style>
     :root {
-      --emerald: #0F5132;
-      --terracotta: #C45A36;
-      --peach: #F4B39B;
-      --ivory: #F8F3E7;
-      --rose-gold: #B76E79;
+      /* NEW PALETTE (only these) */
+      --blue-soft: #FAB95B;
+      --ivory: #E8E2DB;
+      --blue-deep: #A64B2A;
+      --black: #000000;
 
-      --ink: #231a19;
-      --muted: #4b3f3e;
-
-      --border: rgba(244, 179, 155, .55);
-      --shadow: 0 22px 70px rgba(183, 110, 121, .18);
-      --shadow-2: 0 18px 55px rgba(244, 179, 155, .22);
+      --ink: var(--black);
+      --muted: rgba(0, 0, 0, .70);
+      --border: rgba(74, 112, 169, .22);
+      --shadow: 0 22px 70px rgba(0, 0, 0, .14);
+      --shadow-2: 0 18px 55px rgba(74, 112, 169, .18);
 
       --maxw: 1080px;
     }
@@ -48,17 +48,14 @@
 
     body {
       margin: 0;
-      color: var(--emerald);
+      color: var(--ink);
       font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       line-height: 1.65;
-
-      /* ✅ IVORY BASE + PEACH/TERRACOTTA FLORAL BLOOMS */
       background:
-        radial-gradient(560px 460px at 20% 10%, rgba(244, 179, 155, .42), transparent 70%),
-        radial-gradient(560px 460px at 80% 12%, rgba(196, 90, 54, .34), transparent 72%),
-        radial-gradient(900px 680px at 50% 115%, rgba(183, 110, 121, .18), transparent 70%),
-        radial-gradient(720px 520px at 50% -10%, rgba(15, 81, 50, .10), transparent 62%),
-        var(--ivory);
+        radial-gradient(560px 460px at 18% 10%, rgb(241, 230, 201), transparent 72%),
+        radial-gradient(560px 460px at 82% 12%, rgb(255, 224, 143), transparent 74%),
+        radial-gradient(900px 680px at 50% 112%, rgb(237, 237, 206), transparent 72%),
+        var(--blue-soft);
     }
 
     body:before {
@@ -67,10 +64,10 @@
       inset: 0;
       pointer-events: none;
       background-image:
-        radial-gradient(rgba(244, 179, 155, .15) 1px, transparent 1px),
-        radial-gradient(rgba(196, 90, 54, .11) 1px, transparent 1px);
+        radial-gradient(rgba(74, 112, 169, .12) 1px, transparent 1px),
+        radial-gradient(rgba(143, 171, 212, .10) 1px, transparent 1px);
       background-size: 22px 22px, 30px 30px;
-      opacity: .22;
+      opacity: .18;
       mix-blend-mode: multiply;
     }
 
@@ -89,37 +86,29 @@
     /* NAV */
     .topbar {
       position: sticky;
-      top: .5px;
-      z-index: 20;
+      top: 10px;
+      z-index: 30;
       margin: 10px auto 14px;
-      background: rgba(244, 179, 155, .82);
-      border: 1px solid rgba(244, 179, 155, .45);
+      background: rgba(239, 236, 227, .82);
+      border: 1px solid rgba(74, 112, 169, .25);
       backdrop-filter: blur(10px);
-      border-radius: none;
+      border-radius: 999px;
       box-shadow: var(--shadow-2);
       padding: 10px 12px;
       display: flex;
       align-items: center;
       gap: 10px;
-      overflow-x: auto;
-      scrollbar-width: none;
-    }
-
-    .topbar::-webkit-scrollbar {
-      display: none;
     }
 
     .brand {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
       padding: 6px 10px;
       white-space: nowrap;
-    }
-
-    .brand .names {
       font-weight: 900;
       letter-spacing: .2px;
+      color: var(--black);
+      text-decoration: none;
     }
 
     .navlinks {
@@ -128,12 +117,11 @@
       align-items: center;
       flex: 1;
       justify-content: flex-end;
-      min-width: 540px;
     }
 
     .navlinks a {
       text-decoration: none;
-      color: var(--emerald);
+      color: var(--black);
       font-weight: 800;
       font-size: 14px;
       padding: 9px 12px;
@@ -144,8 +132,8 @@
     }
 
     .navlinks a:hover {
-      background: var(--ivory);
-      border-color: rgba(244, 179, 155, .55);
+      background: rgb(215, 168, 110);
+      border-color: rgb(166, 75, 42);
       transform: translateY(-1px);
     }
 
@@ -153,44 +141,108 @@
     .navcta {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 10px;
       padding: 12px 18px;
       border-radius: 999px;
       font-weight: 900;
-      color: var(--terracotta);
-      border: 1px solid var(--terracotta);
-      background: var(--ivory);
-      box-shadow: 0 16px 34px rgba(183, 110, 121, .16);
+      color: var(--black);
+      border: 1px solid rgb(142, 50, 0);
+      background: rgba(143, 171, 212, .22);
+      box-shadow: 0 16px 34px rgb(215, 168, 110);
       cursor: pointer;
       text-decoration: none;
-      transition: transform .12s ease, box-shadow .12s ease, filter .12s ease;
+      transition: transform .12s ease, box-shadow .12s ease, filter .12s ease, background .12s ease;
       white-space: nowrap;
     }
 
     .btn:hover,
     .navcta:hover {
       transform: translateY(-1px);
-      filter: saturate(1.06);
-      box-shadow: 0 22px 44px rgba(183, 110, 121, .18);
-      color: var(--ink);
+      filter: saturate(1.05);
+      box-shadow: 0 22px 44px rgb(142, 50, 0);
+      background: #D7A86E;
     }
 
     .btn.secondary {
-      background: rgba(248, 243, 231, .70);
-      border-color: var(--terracotta);
-      box-shadow: 0 14px 28px rgba(244, 179, 155, .14);
+      background: rgba(239, 236, 227, .90);
+      border-color: rgb(142, 50, 0);
+      box-shadow: 0 14px 28px #D7A86E;
     }
 
-    .btn svg,
-    .navcta svg {
-      width: 18px;
-      height: 18px;
-      color: var(--emerald);
+    /* Hamburger (mobile) */
+    .hamburger {
+      display: none;
+      /* hidden by default (desktop) */
+      margin-left: auto;
+      width: 44px;
+      height: 44px;
+      border-radius: 999px;
+      border: 1px solid rgba(74, 112, 169, .35);
+      background: rgba(239, 236, 227, .92);
+      box-shadow: 0 12px 28px rgba(74, 112, 169, .18);
+      cursor: pointer;
+
+      align-items: center;
+      /* correct syntax */
+      justify-content: center;
+    }
+
+    .hamburger svg {
+      width: 22px;
+      height: 22px;
+      color: var(--blue-deep);
+    }
+
+
+    .mobilemenu {
+      display: none;
+      position: absolute;
+      left: 14px;
+      right: 14px;
+      top: 64px;
+      background: rgba(239, 236, 227, .96);
+      border: 1px solid rgba(74, 112, 169, .25);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+      padding: 10px;
+      z-index: 50;
+    }
+
+    .mobilemenu a,
+    .mobilemenu button {
+      width: 100%;
+      justify-content: flex-start;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 12px;
+      border-radius: 12px;
+      border: 1px solid transparent;
+      background: transparent;
+      font: inherit;
+      color: var(--black);
+      font-weight: 800;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .mobilemenu a:hover,
+    .mobilemenu button:hover {
+      background: rgb(215, 168, 110);
+      border-color: rgb(142, 50, 0);
+    }
+
+    .mobilemenu .divider {
+      margin: 8px 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(74, 112, 169, .28), transparent);
     }
 
     .card {
       position: relative;
-      background: rgba(255, 255, 255, .74);
+      background: rgba(255, 255, 255, .58);
       border: 1px solid var(--border);
       border-radius: 12px;
       box-shadow: var(--shadow);
@@ -203,14 +255,15 @@
       content: "";
       position: absolute;
       inset: 16px;
-      border: 1px solid rgba(244, 179, 155, .65);
+      border: 1px solid rgba(74, 112, 169, .22);
       border-radius: 10px;
       pointer-events: none;
     }
 
+    /* HERO */
     .hero {
       text-align: center;
-      padding: 82px 22px 24px;
+      padding: 64px 22px 12px;
       position: relative;
     }
 
@@ -220,9 +273,9 @@
       width: 760px;
       height: 760px;
       left: 50%;
-      top: -340px;
+      top: -360px;
       transform: translateX(-50%);
-      background: radial-gradient(circle, rgba(244, 179, 155, .26), transparent 62%);
+      background: radial-gradient(circle, rgba(143, 171, 212, .26), transparent 62%);
       filter: blur(2px);
       pointer-events: none;
     }
@@ -233,6 +286,7 @@
       margin: 0;
       position: relative;
       z-index: 1;
+      color: var(--black);
     }
 
     .date-line {
@@ -242,7 +296,7 @@
       justify-content: center;
       gap: 10px;
       font-weight: 800;
-      color: var(--emerald);
+      color: var(--blue-deep);
       opacity: .98;
       position: relative;
       z-index: 1;
@@ -252,56 +306,18 @@
       width: 6px;
       height: 6px;
       border-radius: 999px;
-      background: var(--terracotta);
+      background: var(--blue-deep);
       margin-top: 10px;
     }
 
     .subcopy {
       max-width: 62ch;
-      margin: 16px auto 0;
+      margin: 14px auto 0;
       color: var(--muted);
       font-weight: 600;
       position: relative;
       z-index: 1;
     }
-
-    .hero-actions {
-      margin-top: 18px;
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
-      position: relative;
-      z-index: 1;
-    }
-
-    /* OPTIONAL: make the panel look cleaner + less “boxy” (drop into your CSS) */
-    #registry.panel {
-      padding: 18px 18px 16px;
-    }
-
-    #registry.panel h2 {
-      margin: 0 0 8px;
-    }
-
-    #registry .divider {
-      margin: 12px 0;
-    }
-
-    #registry .btn,
-    #registry .btn.secondary {
-      padding: 11px 16px;
-      /* slightly smaller buttons */
-      box-shadow: none;
-      /* cleaner */
-    }
-
-    #registry .btn:hover,
-    #registry .btn.secondary:hover {
-      box-shadow: 0 14px 28px rgba(244, 179, 155, .14);
-      /* subtle on hover only */
-    }
-
 
     /* Sections */
     .section {
@@ -317,16 +333,17 @@
 
     .panel {
       border-radius: 18px;
-      border: 1px solid rgba(244, 179, 155, .50);
-      background: rgba(255, 255, 255, .70);
+      border: 1px solid rgba(74, 112, 169, .20);
+      background: rgba(255, 255, 255, .62);
       padding: 18px;
-      box-shadow: 0 16px 36px rgba(244, 179, 155, .14);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, .08);
     }
 
     .panel h2 {
       margin: 0 0 10px;
       font-family: "Playfair Display", serif;
       font-size: 26px;
+      color: var(--black);
     }
 
     .panel p {
@@ -337,10 +354,192 @@
 
     .divider {
       height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(244, 179, 155, .75), transparent);
+      background: linear-gradient(90deg, transparent, rgba(74, 112, 169, .26), transparent);
       margin: 12px 0;
     }
 
+    /* Save the Date */
+    .std-section {
+      padding: 18px 22px 40px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .std-card {
+      width: 100%;
+      max-width: 980px;
+      border-radius: 24px;
+      border: 1px solid rgba(74, 112, 169, .20);
+      background: rgba(255, 255, 255, .62);
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow);
+      padding: 22px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .std-card::before {
+      content: "";
+      position: absolute;
+      inset: 14px;
+      border-radius: 18px;
+      border: 1px solid rgba(74, 112, 169, .18);
+      pointer-events: none;
+    }
+
+    .std-head {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      margin-bottom: 12px;
+    }
+
+    .std-head h2 {
+      margin: 0;
+      font-family: "Playfair Display", serif;
+      font-size: 26px;
+      color: var(--black);
+    }
+
+
+    .std-preview {
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(74, 112, 169, .20);
+      background: rgba(239, 236, 227, .75);
+      box-shadow: 0 16px 34px rgba(0, 0, 0, .08);
+      cursor: pointer;
+    }
+
+    .std-preview img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .std-actions {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    /* Countdown */
+    .countdown-section {
+      padding: 0 22px 40px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .countdown-card {
+      max-width: 560px;
+      width: 100%;
+      text-align: center;
+      background: rgba(255, 255, 255, .62);
+      border: 1px solid rgba(74, 112, 169, .20);
+      border-radius: 24px;
+      backdrop-filter: blur(10px);
+      padding: 32px 26px;
+      box-shadow: 0 22px 70px rgba(0, 0, 0, .10);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .countdown-card::before {
+      content: "";
+      position: absolute;
+      inset: 14px;
+      border-radius: 18px;
+      border: 1px solid rgba(74, 112, 169, .18);
+      pointer-events: none;
+    }
+
+    .countdown-glow {
+      position: absolute;
+      width: 700px;
+      height: 520px;
+      top: -360px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: radial-gradient(circle, rgba(143, 171, 212, .22), transparent 70%);
+      pointer-events: none;
+      filter: blur(1px);
+    }
+
+    .countdown-kicker {
+      font-family: "Playfair Display", serif;
+      font-size: 14px;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      margin: 0;
+      color: rgba(0, 0, 0, .60);
+      font-weight: 700;
+    }
+
+    .countdown-title {
+      font-family: "Great Vibes", cursive;
+      font-size: 44px;
+      margin: 10px 0 18px;
+      line-height: 1.15;
+      color: var(--black);
+    }
+
+    .countdown-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 6px;
+    }
+
+    .countdown-pill {
+      border-radius: 18px;
+      border: 1px solid rgba(74, 112, 169, .18);
+      background: radial-gradient(circle at 20% 20%, rgba(143, 171, 212, .16), rgba(239, 236, 227, .72));
+      padding: 14px 10px 12px;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, .06);
+    }
+
+    .countdown-label {
+      font-size: 12px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: rgba(0, 0, 0, .55);
+      font-weight: 800;
+      margin-top: 6px;
+    }
+
+    .flip-wrap {
+      position: relative;
+      height: 56px;
+      display: grid;
+      place-items: center;
+    }
+
+    .num {
+      font-family: "Playfair Display", serif;
+      font-size: 36px;
+      font-weight: 800;
+      line-height: 1.1;
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      color: var(--blue-deep);
+      letter-spacing: .02em;
+      transition: opacity 420ms ease;
+      padding-bottom: 2px;
+    }
+
+    .num.fade-out {
+      opacity: 0;
+    }
+
+    .num.fade-in {
+      opacity: 1;
+    }
+
+    /* Schedule timeline */
     .timeline {
       margin: 10px 0 0;
       padding: 0;
@@ -356,17 +555,18 @@
       align-items: start;
       padding: 14px;
       border-radius: 16px;
-      border: 1px solid rgba(244, 179, 155, .45);
-      background: radial-gradient(circle at 20% 20%, rgba(244, 179, 155, .18), rgba(248, 243, 231, .58));
+      border: 1px solid rgba(74, 112, 169, .20);
+      background: radial-gradient(circle at 20% 20%, rgba(143, 171, 212, .18), rgba(239, 236, 227, .70));
     }
 
     .time {
       font-weight: 950;
-      color: var(--emerald);
+      color: var(--blue-deep);
     }
 
     .event b {
       display: block;
+      color: var(--black);
     }
 
     .event small {
@@ -374,12 +574,13 @@
       font-weight: 700;
     }
 
+    /* FAQs */
     details {
       border-radius: 16px;
-      border: 1px solid rgba(244, 179, 155, .46);
-      background: rgba(255, 255, 255, .70);
+      border: 1px solid rgba(74, 112, 169, .20);
+      background: rgba(255, 255, 255, .62);
       padding: 12px 14px;
-      box-shadow: 0 12px 26px rgba(244, 179, 155, .12);
+      box-shadow: 0 12px 26px rgba(0, 0, 0, .06);
     }
 
     details+details {
@@ -392,6 +593,7 @@
       list-style: none;
       position: relative;
       padding-right: 28px;
+      color: var(--black);
     }
 
     summary::-webkit-details-marker {
@@ -403,7 +605,7 @@
       position: absolute;
       right: 0;
       top: 0;
-      color: var(--terracotta);
+      color: var(--blue-deep);
       font-weight: 950;
     }
 
@@ -418,269 +620,35 @@
       font-weight: 600;
     }
 
+    /* Gifts */
+    #registry.panel {
+      padding: 18px 18px 16px;
+    }
+
+    #registry .btn,
+    #registry .btn.secondary {
+      padding: 11px 16px;
+      box-shadow: none;
+    }
+
+    #registry .btn:hover,
+    #registry .btn.secondary:hover {
+      box-shadow: 0 14px 28px rgba(0, 0, 0, .08);
+    }
+
     footer {
       text-align: center;
       padding: 20px 14px 6px;
-      color: rgba(75, 63, 62, .88);
+      color: rgba(0, 0, 0, .78);
       font-weight: 700;
     }
 
     footer .sig {
       font-family: "Great Vibes", cursive;
       font-size: 34px;
-      color: var(--terracotta);
+      color: var(--blue-deep);
       margin-top: 4px;
-      text-shadow: 0 14px 40px rgba(183, 110, 121, .18);
-    }
-
-    /* ========= Gold Foil Text ========= */
-    .gold-foil {
-      background: linear-gradient(120deg,
-          #D6C29E 42%,
-          #b88a2c 58%,
-          #C45A36 74%,
-          #8c6a1f 100%);
-      background-size: 220% 220%;
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      text-shadow:
-        0 1px 0 rgba(255, 255, 255, .22),
-        0 14px 30px rgba(183, 110, 121, .10);
-      position: relative;
-      animation: foilShimmer 6.5s ease-in-out infinite;
-    }
-
-    .gold-foil::after {
-      content: "";
-      position: absolute;
-      inset: -6px;
-      background:
-        radial-gradient(rgba(255, 255, 255, .10) 1px, transparent 1px),
-        radial-gradient(rgba(0, 0, 0, .06) 1px, transparent 1px);
-      background-size: 18px 18px, 26px 26px;
-      mix-blend-mode: overlay;
-      opacity: .22;
-      pointer-events: none;
-      -webkit-mask-image: linear-gradient(#000, #000);
-      mask-image: linear-gradient(#000, #000);
-    }
-
-    @keyframes foilShimmer {
-
-      0%,
-      100% {
-        background-position: 0% 50%;
-      }
-
-      50% {
-        background-position: 100% 50%;
-      }
-    }
-
-    /* ========= Countdown ========= */
-    .countdown-section {
-      padding: 20px 22px 40px;
-      display: flex;
-      justify-content: center;
-    }
-
-    .countdown-card {
-      max-width: 560px;
-      width: 100%;
-      text-align: center;
-      background: rgba(255, 255, 255, .76);
-      border: 1px solid rgba(244, 179, 155, .55);
-      border-radius: 24px;
-      backdrop-filter: blur(10px);
-      padding: 25px 26px;
-      box-shadow: 0 22px 70px rgba(183, 110, 121, .16);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .countdown-card::before {
-      content: "";
-      position: absolute;
-      inset: 14px;
-      border-radius: 18px;
-      border: 1px solid rgba(244, 179, 155, .52);
-      pointer-events: none;
-    }
-
-    .countdown-glow {
-      position: absolute;
-      width: 700px;
-      height: 520px;
-      top: -360px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: radial-gradient(circle, rgba(244, 179, 155, .25), transparent 70%);
-      pointer-events: none;
-      filter: blur(1px);
-    }
-
-    .countdown-kicker {
-      font-family: "Playfair Display", serif;
-      font-size: 14px;
-      letter-spacing: .28em;
-      text-transform: uppercase;
-      margin: 0;
-      color: rgba(75, 63, 62, .86);
-      font-weight: 700;
-    }
-
-    .countdown-title {
-      font-family: "Great Vibes", cursive;
-      font-size: 44px;
-      margin: 10px 0 18px;
-      line-height: 1.15;
-    }
-
-    .countdown-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-      margin-top: 6px;
-    }
-
-    .countdown-pill {
-      border-radius: 10px;
-      border: 1px solid rgba(244, 179, 155, .48);
-      background: radial-gradient(circle at 20% 20%, rgba(244, 179, 155, .16), rgba(248, 243, 231, .50));
-      padding: 5px 5px 5px;
-      box-shadow: 0 12px 28px rgba(244, 179, 155, .12);
-    }
-
-    .countdown-label {
-      font-size: 8px;
-      letter-spacing: .20em;
-      text-transform: uppercase;
-      color: rgba(75, 63, 62, .85);
-      font-weight: 800;
-      margin-top: 5px;
-    }
-
-    .flip-wrap {
-      position: relative;
-      height: 56px;
-      overflow: visible;
-      display: grid;
-      place-items: center;
-    }
-
-    .num {
-      font-family: "Playfair Display", serif;
-      font-size: 36px;
-      font-weight: 800;
-      line-height: 1.1;
-      position: absolute;
-      inset: 0;
-      display: grid;
-      place-items: center;
-      color: var(--emerald);
-      letter-spacing: .02em;
-      transition: opacity 420ms ease;
-      padding-bottom: 2px;
-    }
-
-    .num.fade-out {
-      opacity: 0;
-    }
-
-    .num.fade-in {
-      opacity: 1;
-    }
-
-    /* ========= Save the Date (ADDED) ========= */
-    .std-section {
-      padding: 0 22px 40px;
-      display: flex;
-      justify-content: center;
-    }
-
-    .std-card {
-      width: 100%;
-      max-width: 980px;
-      border-radius: 24px;
-      border: 1px solid rgba(244, 179, 155, .55);
-      background: rgba(255, 255, 255, .78);
-      backdrop-filter: blur(10px);
-      box-shadow: var(--shadow);
-      padding: 22px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .std-card::before {
-      content: "";
-      position: absolute;
-      inset: 14px;
-      border-radius: 18px;
-      border: 1px solid rgba(244, 179, 155, .52);
-      pointer-events: none;
-    }
-
-    .std-head {
-      text-align: center;
-      position: relative;
-      z-index: 1;
-      margin-bottom: 14px;
-    }
-
-    .std-head h2 {
-      margin: 0;
-      font-family: "Playfair Display", serif;
-      font-size: 26px;
-      color: var(--emerald);
-    }
-
-    .std-head p {
-      margin: 8px 0 0;
-      color: var(--muted);
-      font-weight: 650;
-    }
-
-    .std-grid {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap: 14px;
-      align-items: stretch;
-    }
-
-    .std-preview {
-      border-radius: 18px;
-      overflow: hidden;
-      border: 1px solid rgba(244, 179, 155, .60);
-      background: rgba(248, 243, 231, .60);
-      box-shadow: 0 16px 34px rgba(183, 110, 121, .12);
-      cursor: pointer;
-    }
-
-    .std-preview img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-
-    .std-actions {
-      border-radius: 18px;
-      border: 1px solid rgba(244, 179, 155, .50);
-      background: rgba(255, 255, 255, .72);
-      box-shadow: 0 16px 36px rgba(244, 179, 155, .14);
-      padding: 16px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 10px;
-    }
-
-    .std-actions .hint {
-      font-size: 12px;
-      color: rgba(75, 63, 62, .70);
-      font-weight: 700;
+      text-shadow: 0 14px 40px rgba(74, 112, 169, .16);
     }
 
     @media (max-width: 920px) {
@@ -689,11 +657,15 @@
       }
 
       .navlinks {
-        min-width: auto;
+        display: none;
       }
 
-      .std-grid {
-        grid-template-columns: 1fr;
+      .hamburger {
+        display: inline-flex;
+      }
+
+      .topbar {
+        border-radius: 18px;
       }
     }
 
@@ -706,18 +678,6 @@
       to {
         transform: translateY(0);
         opacity: 1;
-      }
-    }
-
-    @keyframes floaty {
-
-      0%,
-      100% {
-        transform: translateY(0);
-      }
-
-      50% {
-        transform: translateY(-6px);
       }
     }
 
@@ -738,112 +698,99 @@
 <body>
   <div class="wrap">
     <div class="shell">
-      <nav class="topbar" aria-label="Wedding navigation">
-        <div class="brand" title="Karen & Marvin">
-          <div class="names">Karen & Marvin</div>
-        </div>
 
-        <div class="navlinks">
+      <!-- NAV (Save the Date first) -->
+      <nav class="topbar" aria-label="Wedding navigation">
+        <a class="brand" href="#top" aria-label="Back to top">Karen &amp; Marvin</a>
+
+        <div class="navlinks" aria-label="Primary navigation">
           <a href="#save-the-date">Save the date</a>
+          <a href="#countdown">Countdown</a>
           <a href="#details">Details</a>
           <a href="#schedule">Schedule</a>
           <a href="#travel">Travel</a>
           <a href="#faq">FAQs</a>
           <a href="#registry">Gifts</a>
+          <button class="navcta js-rsvp" type="button" aria-label="RSVP">RSVP</button>
+        </div>
 
-          <button class="navcta js-rsvp" type="button" aria-label="RSVP">
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path
-                d="M4 7.5a2.5 2.5 0 0 1 2.5-2.5h11A2.5 2.5 0 0 1 20 7.5v9A2.5 2.5 0 0 1 17.5 19h-11A2.5 2.5 0 0 1 4 16.5v-9Z"
-                stroke="currentColor" stroke-width="2" />
-              <path d="M6.5 7.5 12 12l5.5-4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" />
-            </svg>
-            RSVP
-          </button>
+        <button class="hamburger" id="hamburgerBtn" type="button" aria-label="Open menu" aria-expanded="false"
+          aria-controls="mobileMenu">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          </svg>
+        </button>
+
+        <div class="mobilemenu" id="mobileMenu" role="menu" aria-label="Mobile navigation">
+          <a href="#save-the-date" role="menuitem">Save the date</a>
+          <a href="#countdown" role="menuitem">Countdown</a>
+          <a href="#details" role="menuitem">Details</a>
+          <a href="#schedule" role="menuitem">Schedule</a>
+          <a href="#travel" role="menuitem">Travel</a>
+          <a href="#faq" role="menuitem">FAQs</a>
+          <a href="#registry" role="menuitem">Gifts</a>
+          <div class="divider"></div>
+          <button class="navcta js-rsvp" type="button" role="menuitem" style="width:100%;">RSVP</button>
         </div>
       </nav>
 
-      <main class="card">
+      <main class="card" id="top">
+        <!-- HERO (clean intro only) -->
         <header class="hero">
-          <h1>Karen & Marvin</h1>
-          <div class="date-line" aria-label="Wedding date and location">
-            <span>22 December 2026</span>
-            <span class="dot" aria-hidden="true"></span>
-            <span>Mumbai, India</span>
-
-          </div>
-          <!-- Countdown moved directly under the hero -->
-          <section class="countdown-section" id="countdown-section">
-            <div class="countdown-card">
-              <div class="countdown-glow"></div>
-
-              <p class="countdown-kicker">Counting down to</p>
-              <h2 class="countdown-title gold-foil">Our Wedding Day</h2>
-
-              <div class="countdown-grid" aria-label="Countdown">
-                <div class="countdown-pill">
-                  <div class="flip-wrap" id="daysWrap"><span class="num fade-in">—</span></div>
-                  <div class="countdown-label">Days</div>
-                </div>
-                <div class="countdown-pill">
-                  <div class="flip-wrap" id="hoursWrap"><span class="num fade-in">—</span></div>
-                  <div class="countdown-label">Hours</div>
-                </div>
-                <div class="countdown-pill">
-                  <div class="flip-wrap" id="minsWrap"><span class="num fade-in">—</span></div>
-                  <div class="countdown-label">Minutes</div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-
+          <h1>Karen &amp; Marvin</h1>
           <p class="subcopy">
             With full hearts, we can’t wait to celebrate our wedding with our favourite people.
-            Here you’ll find the schedule, travel notes, and RSVP.
           </p>
         </header>
 
-        <!-- ✅ SAVE THE DATE + DOWNLOAD (ADDED) -->
+        <!-- 1) SAVE THE DATE (first) -->
         <section class="std-section" id="save-the-date">
           <div class="std-card">
             <div class="std-head">
               <h2>Save the Date</h2>
             </div>
 
-            <div class="std-grid">
-              <!-- Preview image: update filename to your actual image -->
-              <div class="std-preview" id="stdPreviewTrigger" aria-label="Open Save the Date preview">
-                <img src="save_the_date_preview.jpg" alt="Save the Date preview">
-              </div>
+            <div class="std-preview" id="stdPreviewTrigger" aria-label="Open Save the Date preview">
+              <img src="save_the_date_preview.jpg" alt="Save the Date preview">
+            </div>
+            <div class="std-actions">
+              <button class="btn secondary js-rsvp" type="button">RSVP</button>
+            </div>
+          </div>
+        </section>
 
-              <!-- Download buttons: update filenames to your real files -->
-              <div class="std-actions">
-                <a class="btn" href="#schedule">View schedule</a>
-                <button class="btn secondary js-rsvp" type="button">
-                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                    <path
-                      d="M4 7.5a2.5 2.5 0 0 1 2.5-2.5h11A2.5 2.5 0 0 1 20 7.5v9A2.5 2.5 0 0 1 17.5 19h-11A2.5 2.5 0 0 1 4 16.5v-9Z"
-                      stroke="currentColor" stroke-width="2" />
-                    <path d="M6.5 7.5 12 12l5.5-4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round" />
-                  </svg>
-                  RSVP
-                </button>
+        <!-- 2) COUNTDOWN (second) -->
+        <section class="countdown-section" id="countdown">
+          <div class="countdown-card">
+            <div class="countdown-glow"></div>
+            <p class="countdown-kicker">Counting down to</p>
+            <h2 class="countdown-title">Our Wedding Day</h2>
+
+            <div class="countdown-grid" aria-label="Countdown">
+              <div class="countdown-pill">
+                <div class="flip-wrap" id="daysWrap"><span class="num fade-in">—</span></div>
+                <div class="countdown-label">Days</div>
+              </div>
+              <div class="countdown-pill">
+                <div class="flip-wrap" id="hoursWrap"><span class="num fade-in">—</span></div>
+                <div class="countdown-label">Hours</div>
+              </div>
+              <div class="countdown-pill">
+                <div class="flip-wrap" id="minsWrap"><span class="num fade-in">—</span></div>
+                <div class="countdown-label">Minutes</div>
               </div>
             </div>
           </div>
         </section>
 
+        <!-- 3) THOUGHTS / DETAILS (third) -->
         <section class="section" id="details">
           <div class="grid">
             <article class="panel">
               <h2>Our story</h2>
               <p>
                 From a simple “I’ve seen you before” to a love that feels like home, our journey has been woven with
-                memories, kindness, and the people we hold closest. We’re beyond excited to celebrate our wedding
-                surrounded by the friends and family who have walked beside us through every season.
+                memories, kindness, and the people we hold closest.
               </p>
               <div class="divider"></div>
               <p>We’ll keep this page updated as details are confirmed. Check back for venues, timing, and travel tips.
@@ -861,13 +808,14 @@
           </div>
         </section>
 
+        <!-- 4) SCHEDULE -->
         <section class="section" id="schedule">
           <div class="grid">
             <article class="panel">
               <h2>Schedule</h2>
-              <p>Times below are placeholders — we’ll update with the final ceremony & reception timings.</p>
+              <p>We’ll update with the final ceremony &amp; reception timings.</p>
 
-              <ul class="timeline" aria-label="Wedding timeline">
+              <!--<ul class="timeline" aria-label="Wedding timeline">
                 <li class="event">
                   <div class="time">4:30 PM</div>
                   <div><b>Nuptials</b><small>Venue details coming soon</small></div>
@@ -876,22 +824,21 @@
                   <div class="time">6:00 PM</div>
                   <div><b>Reception</b><small>Drinks, Dinner, dancing, and photos</small></div>
                 </li>
-              </ul>
+              </ul>-->
             </article>
 
             <aside class="panel">
               <h2>Little notes</h2>
-              <p>We love a cozy, winter-garden vibe — think emerald accents, champagne glow, and soft blush florals.</p>
-              <div class="divider"></div>
               <p>Please arrive a bit early so we can start on time.</p>
             </aside>
           </div>
         </section>
 
+        <!-- 5) TRAVEL -->
         <section class="section" id="travel">
           <div class="grid">
             <article class="panel">
-              <h2>Travel & stay</h2>
+              <h2>Travel &amp; stay</h2>
               <p>Mumbai in December is warm and lively. We’ll share recommended hotels and neighbourhoods soon.</p>
               <div class="divider"></div>
               <ul style="margin:0; padding-left:18px; color:var(--muted); font-weight:700;">
@@ -908,13 +855,14 @@
           </div>
         </section>
 
+        <!-- 6) FAQ + GIFTS -->
         <section class="section" id="faq">
           <div class="grid">
             <article class="panel">
               <h2>FAQs</h2>
               <details>
                 <summary>What should I wear?</summary>
-                <small>Festive & elegant. Think cocktail / formal — and feel free to lean into jewel tones.</small>
+                <small>Festive &amp; elegant. Think cocktail / formal — and feel free to lean into jewel tones.</small>
               </details>
               <details>
                 <summary>When do I need to RSVP by?</summary>
@@ -924,53 +872,44 @@
 
             <aside class="panel" id="registry">
               <h2>Gifts</h2>
-
-              <p style="margin:0; color:var(--muted); font-weight:650;">
-                Your presence is the best gift.
-              </p>
-
+              <p style="margin:0; color:var(--muted); font-weight:650;">Your presence is the best gift.</p>
               <div class="divider"></div>
-
               <p style="margin:0; color:var(--ink); font-weight:800;">
-                If you’d like to gift, <span style="color:var(--terracotta);">cash</span> or <span
-                  style="color:var(--terracotta);">UPI</span> is perfect.
+                If you’d like to gift, <span style="color:var(--blue-deep);">cash</span> or <span
+                  style="color:var(--blue-deep);">UPI</span> is perfect.
               </p>
-
               <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
-                <!-- Replace with your actual UPI action (QR modal / link) -->
-                <a class="btn secondary" href="#" onclick="alert('Add your UPI details / QR link here'); return false;">
-                  UPI details
-                </a>
-                <div style="margin-top:10px; font-size:12px; color:rgba(75,63,62,.72); font-weight:700;">
-                  P.S. No boxes, no wrapping, no guessing — just good vibes.
-                </div>
+                <a class="btn secondary" href="#"
+                  onclick="alert('Add your UPI details / QR link here'); return false;">UPI details</a>
+                <button class="btn secondary js-rsvp" type="button">RSVP</button>
+              </div>
+              <div style="margin-top:10px; font-size:12px; color:rgba(0,0,0,.62); font-weight:700;">
+                P.S. No boxes, no wrapping — just good vibes.
               </div>
             </aside>
-
           </div>
         </section>
 
         <footer>
           <div>With love,</div>
-          <div class="sig">Karen & Marvin</div>
+          <div class="sig">Karen &amp; Marvin</div>
           <div style="margin-top:6px; font-size:12px; opacity:.85;">© <span id="year"></span></div>
         </footer>
       </main>
     </div>
   </div>
 
-  <!-- ✅ SAVE THE DATE MODAL (ADDED) -->
+  <!-- Save the Date modal -->
   <div id="stdModal"
     style="position:fixed; inset:0; background:rgba(0,0,0,.55); display:none; align-items:center; justify-content:center; z-index:999; backdrop-filter:blur(3px); animation: cardZoom .45s ease both;">
     <div
-      style="background:white; padding:0; border-radius:12px; width:min(900px, 92vw); max-height:90vh; overflow:hidden; box-shadow:0 20px 40px rgba(0,0,0,.25);">
-      <div
-        style="display:flex; align-items:center; justify-content:center; padding:14px; background:rgba(255,255,255,.90);">
+      style="background:rgba(239,236,227,.98); padding:0; border-radius:12px; width:min(900px, 92vw); max-height:90vh; overflow:hidden; box-shadow:0 20px 40px rgba(0,0,0,.25);">
+      <div style="display:flex; align-items:center; justify-content:center; padding:14px;">
         <img src="save_the_date_preview.jpg" alt="Save the Date full preview"
-          style="display:block; max-width:100%; max-height:72vh; width:auto; height:auto; object-fit:contain; border-radius:10px; border:1px solid rgba(244,179,155,.60);" />
+          style="display:block; max-width:100%; max-height:72vh; width:auto; height:auto; object-fit:contain; border-radius:10px; border:1px solid rgba(74,112,169,.20);" />
       </div>
       <button id="closeCardBtn"
-        style="width:100%; padding:14px; border:0; background:var(--emerald); color:var(--ivory); font-weight:900; cursor:pointer; font-size:15px; letter-spacing:.5px;">
+        style="width:100%; padding:14px; border:0; background:rgb(215, 168, 110); color:var(--ivory); font-weight:900; cursor:pointer; font-size:15px; letter-spacing:.5px;">
         Close
       </button>
     </div>
@@ -987,12 +926,12 @@
     document.getElementById("rsvpBy").textContent =
       rsvpDeadline.toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" });
 
-    // RSVP buttons -> Google Form
+    // RSVP buttons
     document.querySelectorAll(".js-rsvp").forEach((btn) => {
       btn.addEventListener("click", () => window.open(RSVP_FORM_URL, "_blank"));
     });
 
-    // Elegant countdown (fade-only)
+    // Countdown (fade-only)
     const wraps = {
       days: document.getElementById("daysWrap"),
       hours: document.getElementById("hoursWrap"),
@@ -1052,7 +991,7 @@
     updateCountdown();
     setInterval(updateCountdown, 15000);
 
-    // ✅ Save the Date Modal wiring
+    // Save the Date modal
     const stdModal = document.getElementById("stdModal");
     const stdOpen = document.getElementById("stdPreviewTrigger");
     const stdClose = document.getElementById("closeCardBtn");
@@ -1063,6 +1002,38 @@
     stdModal.addEventListener("click", (e) => {
       if (e.target === stdModal) stdModal.style.display = "none";
     });
+
+    // Hamburger menu (mobile)
+    const hamburgerBtn = document.getElementById("hamburgerBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    function closeMenu() {
+      mobileMenu.style.display = "none";
+      hamburgerBtn.setAttribute("aria-expanded", "false");
+    }
+    function openMenu() {
+      mobileMenu.style.display = "block";
+      hamburgerBtn.setAttribute("aria-expanded", "true");
+    }
+
+    if (hamburgerBtn && mobileMenu) {
+      hamburgerBtn.addEventListener("click", () => {
+        const isOpen = hamburgerBtn.getAttribute("aria-expanded") === "true";
+        isOpen ? closeMenu() : openMenu();
+      });
+
+      mobileMenu.querySelectorAll("a, button").forEach((el) => {
+        el.addEventListener("click", () => closeMenu());
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!mobileMenu.contains(e.target) && !hamburgerBtn.contains(e.target)) closeMenu();
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeMenu();
+      });
+    }
   </script>
 </body>
 
